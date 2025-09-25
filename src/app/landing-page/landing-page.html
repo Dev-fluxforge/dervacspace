@@ -16,16 +16,16 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
-          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Features</button>
-          <button (click)="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Pricing</button>
-          <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Testimonials</button>
-          <button (click)="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Contact</button>
+          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Features</button>
+          <button (click)="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Pricing</button>
+          <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Testimonials</button>
+          <button (click)="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Contact</button>
         </div>
 
         <!-- CTA Button -->
         <button
           routerLink="/subscriptions"
-          class="btn-primary hidden md:inline-block px-6 py-2 font-semibold text-lg hover:bg-blue-700 hover:text-white transition duration-300"
+          class="btn-primary hidden md:inline-block px-6 py-2 font-semibold text-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 cursor-pointer"
         >
           Book Now
         </button>
@@ -52,13 +52,13 @@
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <button
               routerLink="/subscriptions"
-              class="btn-primary text-lg px-8 py-4"
+              class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer"
             >
               Get Started Today
             </button>
             <button
               (click)="scrollToSection('features')"
-              class="btn-secondary text-lg px-8 py-4"
+              class="bg-gray-200 text-gray-800 text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
             >
               Learn More
             </button>
@@ -201,7 +201,7 @@
           </ul>
           <button
             routerLink="/subscriptions"
-            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-200 transition duration-300"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
           >
             Learn More
           </button>
@@ -219,7 +219,7 @@
           </ul>
           <button
             routerLink="/subscriptions"
-            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-200 transition duration-300"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
           >
             Learn More
           </button>
@@ -243,7 +243,7 @@
           </ul>
           <button
             routerLink="/subscriptions"
-            class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+            class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"
           >
             Get Started
           </button>
@@ -267,7 +267,7 @@
           </ul>
           <button
             routerLink="/subscriptions"
-            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-200 transition duration-300"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
           >
             Learn More
           </button>
@@ -277,7 +277,7 @@
       <div class="text-center">
         <button
           routerLink="/subscriptions"
-          class="btn-primary text-lg px-8 py-4"
+          class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer"
         >
           View All Plans & Book Now
         </button>
@@ -377,13 +377,13 @@
       <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <button
           routerLink="/subscriptions"
-          class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition duration-300"
+          class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
         >
           Book Your Space Today
         </button>
         <button
           (click)="scrollToSection('contact')"
-          class="border border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300"
+          class="border border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"
         >
           Contact Us
         </button>
@@ -468,7 +468,7 @@
               <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
             </div>
 
-            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer">
               Send Message
             </button>
           </form>
@@ -499,10 +499,10 @@
         <div>
           <h4 class="font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><button (click)="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm">Features</button></li>
-            <li><button (click)="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm">Pricing Plans</button></li>
-            <li><button (click)="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm">Testimonials</button></li>
-            <li><button routerLink="/subscriptions" class="hover:text-white transition duration-300 text-sm">Book Now</button></li>
+            <li><button (click)="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Features</button></li>
+            <li><button (click)="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Pricing Plans</button></li>
+            <li><button (click)="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Testimonials</button></li>
+            <li><button routerLink="/subscriptions" class="hover:text-white transition duration-300 text-sm cursor-pointer">Book Now</button></li>
           </ul>
         </div>
 
@@ -510,7 +510,7 @@
         <div>
           <h4 class="font-semibold mb-4">Contact Info</h4>
           <ul class="space-y-2 text-gray-400 text-sm">
-            <li>📧 info@dervac.com`</li>
+            <li>📧 info@dervac.com</li>
             <li>📞 +234 (816) 022-5365</li>
             <li>📍 65, Shipeolu Street</li>
             <li>Palmgroove, Lagos State </li>
