@@ -1,0 +1,536 @@
+<div class="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xl">W</span>
+          </div>
+          <div>
+            <span class="text-2xl font-bold text-gray-900">Dervac WorkSpace </span>
+            <!-- <span class="text-blue-600 text-sm font-medium ml-2">Premium</span> -->
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Features</button>
+          <button (click)="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Pricing</button>
+          <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Testimonials</button>
+          <button (click)="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium">Contact</button>
+        </div>
+
+        <!-- CTA Button -->
+        <button
+          routerLink="/subscriptions"
+          class="btn-primary hidden md:inline-block px-6 py-2 font-semibold text-lg hover:bg-blue-700 hover:text-white transition duration-300"
+        >
+          Book Now
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Hero Content -->
+        <div class="space-y-6">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            Your Perfect
+            <span class="text-blue-600"> Workspace</span>
+            Awaits
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+            Experience premium coworking with 24/7 power supply, climate-controlled environment,
+            and blazing-fast internet. Designed for productivity, built for success.
+          </p>
+
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <button
+              routerLink="/subscriptions"
+              class="btn-primary text-lg px-8 py-4"
+            >
+              Get Started Today
+            </button>
+            <button
+              (click)="scrollToSection('features')"
+              class="btn-secondary text-lg px-8 py-4"
+            >
+              Learn More
+            </button>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="flex flex-wrap items-center gap-6 pt-4">
+            <div class="flex items-center space-x-2">
+              <span class="text-2xl text-yellow-400">⭐</span>
+              <span class="font-semibold">4.9/5 Rating</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-2xl text-blue-500">👥</span>
+              <span class="font-semibold">500+ Members</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-2xl text-green-500">⚡</span>
+              <span class="font-semibold">24/7 Available</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-80 md:h-96 rounded-2xl flex items-center justify-center">
+              <div class="text-white text-center p-8">
+                <span class="text-6xl mb-4 block">🏢</span>
+                <h3 class="text-2xl font-bold mb-2">Premium Workspace</h3>
+                <p class="opacity-90">Always ready when you are</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                <span class="text-xl text-green-600">✓</span>
+              </div>
+              <div>
+                <p class="font-semibold text-sm">Available Now</p>
+                <p class="text-xs text-gray-600">Instant access</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything You Need to Succeed</h2>
+        <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          Our premium amenities are designed to boost your productivity and comfort
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+        <!-- Feature 1 -->
+        <div class="text-center p-6 rounded-2xl hover:shadow-lg transition duration-300 card-hover">
+          <div class="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">⚡</span>
+          </div>
+          <h3 class="text-xl md:text-2xl font-semibold mb-4">24/7 Power Supply</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Never worry about power outages. Our reliable backup system ensures uninterrupted work sessions,
+            day or night. Focus on your work while we handle the infrastructure.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="text-center p-6 rounded-2xl hover:shadow-lg transition duration-300 card-hover">
+          <div class="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">❄️</span>
+          </div>
+          <h3 class="text-xl md:text-2xl font-semibold mb-4">Cool Environment</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Stay comfortable in our climate-controlled spaces designed for optimal productivity.
+            Perfect temperature maintained year-round for maximum focus and comfort.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="text-center p-6 rounded-2xl hover:shadow-lg transition duration-300 card-hover">
+          <div class="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <span class="text-3xl">📶</span>
+          </div>
+          <h3 class="text-xl md:text-2xl font-semibold mb-4">Free High-Speed Network</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Enjoy blazing-fast internet with enterprise-grade security. Perfect for video calls,
+            large file transfers, and seamless online collaboration. No lag, no interruptions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Additional Features Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div class="text-center p-4">
+          <span class="text-2xl mb-3 block">🪑</span>
+          <p class="font-semibold">Ergonomic Furniture</p>
+        </div>
+        <div class="text-center p-4">
+          <span class="text-2xl mb-3 block">☕</span>
+          <p class="font-semibold">Free Refreshments</p>
+        </div>
+        <div class="text-center p-4">
+          <span class="text-2xl mb-3 block">🔒</span>
+          <p class="font-semibold">Secure Access</p>
+        </div>
+        <div class="text-center p-4">
+          <span class="text-2xl mb-3 block">💬</span>
+          <p class="font-semibold">Community Events</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Preview Section -->
+  <section id="pricing" class="py-16 md:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Flexible Plans for Every Need</h2>
+        <p class="text-lg md:text-xl text-gray-600">Choose the perfect plan that fits your schedule and budget</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Hourly Pass -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center card-hover">
+          <h3 class="text-xl font-bold mb-2">Hourly Pass</h3>
+          <p class="text-gray-600 mb-4 text-sm">Perfect for quick sessions</p>
+          <div class="text-3xl font-bold text-blue-600 mb-2">$5<span class="text-lg text-gray-600">/hour</span></div>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li class="flex items-center justify-center">
+              <span class="text-green-500 mr-2">✓</span> All Basic Amenities
+            </li>
+          </ul>
+          <button
+            routerLink="/subscriptions"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-200 transition duration-300"
+          >
+            Learn More
+          </button>
+        </div>
+
+        <!-- Daily Pass -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center card-hover">
+          <h3 class="text-xl font-bold mb-2">Daily Pass</h3>
+          <p class="text-gray-600 mb-4 text-sm">Great for full-day work</p>
+          <div class="text-3xl font-bold text-blue-600 mb-2">$25<span class="text-lg text-gray-600">/day</span></div>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li class="flex items-center justify-center">
+              <span class="text-green-500 mr-2">✓</span> All Basic Amenities
+            </li>
+          </ul>
+          <button
+            routerLink="/subscriptions"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-200 transition duration-300"
+          >
+            Learn More
+          </button>
+        </div>
+
+        <!-- Weekly Pass -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center relative border-2 border-yellow-500 card-hover">
+          <div class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full absolute -top-3 left-1/2 transform -translate-x-1/2">
+            MOST POPULAR
+          </div>
+          <h3 class="text-xl font-bold mb-2">Weekly Pass</h3>
+          <p class="text-gray-600 mb-4 text-sm">Ideal for projects</p>
+          <div class="text-3xl font-bold text-blue-600 mb-2">$120<span class="text-lg text-gray-600">/week</span></div>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li class="flex items-center justify-center">
+              <span class="text-green-500 mr-2">✓</span> All Basic Amenities
+            </li>
+            <li class="flex items-center justify-center">
+              <span class="text-green-500 mr-2">✓</span> 10% Refreshment Discount
+            </li>
+          </ul>
+          <button
+            routerLink="/subscriptions"
+            class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+          >
+            Get Started
+          </button>
+        </div>
+
+        <!-- Monthly Pass -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center card-hover">
+          <h3 class="text-xl font-bold mb-2">Monthly Pass</h3>
+          <p class="text-gray-600 mb-4 text-sm">Best value</p>
+          <div class="text-3xl font-bold text-blue-600 mb-2">$400<span class="text-lg text-gray-600">/month</span></div>
+          <ul class="space-y-2 mb-6 text-sm">
+            <li class="flex items-center justify-center">
+              <span class="text-green-500 mr-2">✓</span> All Basic Amenities
+            </li>
+            <li class="flex items-center justify-center">
+              <span class="text-green-500 mr-2">✓</span> 20% Refreshment Discount
+            </li>
+            <li class="flex items-center justify-center">
+              <span class="text-green-500 mr-2">✓</span> Locker Access
+            </li>
+          </ul>
+          <button
+            routerLink="/subscriptions"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-200 transition duration-300"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button
+          routerLink="/subscriptions"
+          class="btn-primary text-lg px-8 py-4"
+        >
+          View All Plans & Book Now
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Members Say</h2>
+        <p class="text-lg text-gray-600">Join hundreds of satisfied professionals</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center mb-4">
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+          </div>
+          <p class="text-gray-700 mb-4 italic">
+            "The 24/7 access has been a game-changer for my startup. The reliable power and fast internet let me work whenever inspiration strikes."
+          </p>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+              <span class="text-blue-600 font-semibold">SJ</span>
+            </div>
+            <div>
+              <p class="font-semibold">Sarah Johnson</p>
+              <p class="text-sm text-gray-600">Tech Entrepreneur</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center mb-4">
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+          </div>
+          <p class="text-gray-700 mb-4 italic">
+            "As a freelancer, the flexible plans are perfect. I can choose hourly when I have short tasks or weekly for bigger projects."
+          </p>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+              <span class="text-green-600 font-semibold">MR</span>
+            </div>
+            <div>
+              <p class="font-semibold">Mike Rodriguez</p>
+              <p class="text-sm text-gray-600">Freelance Designer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <div class="flex items-center mb-4">
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+            <span class="text-2xl">⭐</span>
+          </div>
+          <p class="text-gray-700 mb-4 italic">
+            "The cool environment and professional atmosphere boost my productivity. It's like having a proper office without the long-term commitment."
+          </p>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+              <span class="text-purple-600 font-semibold">EC</span>
+            </div>
+            <div>
+              <p class="font-semibold">Emily Chen</p>
+              <p class="text-sm text-gray-600">Remote Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 md:py-24 bg-blue-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Boost Your Productivity?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Join hundreds of professionals who've found their perfect workspace at WorkSpace Pro.
+        No long-term contracts, just premium workspace when you need it.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <button
+          routerLink="/subscriptions"
+          class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition duration-300"
+        >
+          Book Your Space Today
+        </button>
+        <button
+          (click)="scrollToSection('contact')"
+          class="border border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300"
+        >
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Have questions? Our team is here to help you find the perfect workspace solution.
+            Reach out and we'll get back to you within 24 hours.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span class="text-xl text-blue-600">📧</span>
+              </div>
+              <div>
+                <p class="font-semibold">Email</p>
+                <p class="text-gray-600">info@dervac.com</p>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span class="text-xl text-blue-600">📞</span>
+              </div>
+              <div>
+                <p class="font-semibold">Phone</p>
+                <p class="text-gray-600">+234 (816) 022-5365</p>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span class="text-xl text-blue-600">📍</span>
+              </div>
+              <div>
+                <p class="font-semibold">Address</p>
+                <p class="text-gray-600">65, Shipeolu Street<br>Palmgroove, Lagos State 12345</p>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span class="text-xl text-blue-600">🕒</span>
+              </div>
+              <div>
+                <p class="font-semibold">Hours</p>
+                <p class="text-gray-600">Monday - Sunday: 24/7<br>Holidays: Always Open</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 md:p-8">
+          <h3 class="text-2xl font-bold mb-6">Send us a Message</h3>
+          <form class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+              <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Company Info -->
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold">W</span>
+            </div>
+            <span class="text-xl font-bold">Dervac WorkSpace</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Premium coworking space designed for productivity, comfort, and success.
+            Your perfect workspace awaits, available 24/7.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><button (click)="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm">Features</button></li>
+            <li><button (click)="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm">Pricing Plans</button></li>
+            <li><button (click)="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm">Testimonials</button></li>
+            <li><button routerLink="/subscriptions" class="hover:text-white transition duration-300 text-sm">Book Now</button></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-semibold mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>📧 info@dervac.com`</li>
+            <li>📞 +234 (816) 022-5365</li>
+            <li>📍 65, Shipeolu Street</li>
+            <li>Palmgroove, Lagos State </li>
+          </ul>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h4 class="font-semibold mb-4">Operating Hours</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>Monday - Sunday: 24/7</li>
+            <li>Holidays: Always Open</li>
+            <li>Support: 24/7 Available</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <p>&copy; {{ getCurrentYear() }} Dervac WorkSpace. All rights reserved. | Premium Coworking Space Solutions</p>
+      </div>
+    </div>
+  </footer>
+</div>

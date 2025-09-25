@@ -1,0 +1,231 @@
+<div class="min-h-screen bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <button
+          routerLink="/"
+          class="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition duration-300 font-semibold"
+        >
+          <span>←</span>
+          <span>Back to Home</span>
+        </button>
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-xl">W</span>
+          </div>
+          <div>
+            <span class="text-xl font-bold text-gray-900">WorkSpace Pro</span>
+            <span class="text-blue-600 text-sm font-medium ml-2">Book Now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Choose Your Perfect Plan</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Select the duration that works best for you. All plans include our core features:
+        24/7 power supply, cool environment, and free high-speed network.
+      </p>
+    </div>
+
+    <!-- Subscription Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div
+        *ngFor="let subscription of subscriptions"
+        [class]="getCardClasses(subscription)"
+        (click)="selectSubscription(subscription)"
+      >
+        <div class="text-center h-full flex flex-col">
+          <!-- Popular Badge -->
+          <div *ngIf="subscription.popular" class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full inline-block mb-4">
+            MOST POPULAR
+          </div>
+
+          <h3 class="text-xl font-bold mb-2">{{ subscription.name }}</h3>
+          <p class="text-gray-600 mb-4 text-sm">{{ subscription.duration }}</p>
+
+          <!-- Price -->
+          <div class="mb-4 flex-grow">
+            <div class="text-3xl font-bold text-blue-600">${{ subscription.price }}</div>
+            <div class="text-gray-600 text-sm">
+              <span *ngIf="subscription.duration.includes('Hour')">per hour</span>
+              <span *ngIf="subscription.duration.includes('Day') && !subscription.duration.includes('Weekly')">per day</span>
+              <span *ngIf="subscription.duration.includes('Weekly')">per week</span>
+              <span *ngIf="subscription.duration.includes('Monthly')">per month</span>
+            </div>
+            <div *ngIf="subscription.savings" class="text-green-600 text-xs font-semibold mt-1">
+              {{ subscription.savings }}
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="text-gray-700 mb-6 text-sm">{{ subscription.description }}</p>
+
+          <!-- Features -->
+          <ul class="space-y-2 mb-6 text-sm flex-grow">
+            <li *ngFor="let feature of subscription.features" class="flex items-center">
+              <span class="text-green-500 mr-2 text-xs">✓</span>
+              <span class="text-left">{{ feature }}</span>
+            </li>
+          </ul>
+
+          <!-- Select Button -->
+          <button
+            class="w-full mt-auto py-3 rounded-lg font-semibold transition duration-300"
+            [class]="selectedSubscription?.id === subscription.id ?
+                    'bg-blue-800 text-white' :
+                    'bg-blue-600 text-white hover:bg-blue-700'"
+          >
+            {{ selectedSubscription?.id === subscription.id ? 'Selected' : 'Select Plan' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Section -->
+    <div *ngIf="selectedSubscription" class="bg-white rounded-2xl shadow-lg p-6 md:p-8 max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Confirm Your Booking</h2>
+        <p class="text-gray-600">You're almost there! Just fill in your details to complete the booking.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Selected Plan Summary -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-xl font-bold mb-4">Selected Plan</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span class="font-semibold">Plan:</span>
+              <span>{{ selectedSubscription.name }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="font-semibold">Duration:</span>
+              <span>{{ selectedSubscription.duration }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="font-semibold">Price:</span>
+              <span class="text-blue-600 font-bold">${{ selectedSubscription.price }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="font-semibold">Includes:</span>
+              <span>{{ selectedSubscription.features.length }} features</span>
+            </div>
+          </div>
+
+          <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p class="text-sm text-blue-700">
+              💡 <strong>Pro Tip:</strong> {{ selectedSubscription.description }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div>
+          <h3 class="text-xl font-bold mb-4">Your Information</h3>
+          <form (ngSubmit)="bookSubscription()" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+              <input
+                type="text"
+                required
+                [(ngModel)]="bookingForm.name"
+                name="name"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Enter your full name"
+              >
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+              <input
+                type="email"
+                required
+                [(ngModel)]="bookingForm.email"
+                name="email"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="your.email@example.com"
+              >
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+              <input
+                type="tel"
+                required
+                [(ngModel)]="bookingForm.phone"
+                name="phone"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="+1 (555) 123-4567"
+              >
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Additional Notes</label>
+              <textarea
+                rows="3"
+                [(ngModel)]="bookingForm.notes"
+                name="notes"
+                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="Any special requirements or questions..."
+              ></textarea>
+            </div>
+
+            <div class="flex space-x-4 pt-4">
+              <button
+                type="submit"
+                class="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300"
+              >
+                Confirm Booking
+              </button>
+              <button
+                type="button"
+                (click)="selectedSubscription = null"
+                class="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-400 transition duration-300"
+              >
+                Cancel
+              </button>
+            </div>
+
+            <p class="text-xs text-gray-500 text-center">
+              By booking, you agree to our terms of service. We'll contact you within 24 hours to confirm your access.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Selection Message -->
+    <div *ngIf="!selectedSubscription" class="text-center py-12">
+      <div class="max-w-md mx-auto">
+        <span class="text-6xl mb-4 block">🤔</span>
+        <h3 class="text-xl font-semibold text-gray-700 mb-2">Select a Plan to Continue</h3>
+        <p class="text-gray-600">Choose one of the subscription plans above to start your booking process.</p>
+      </div>
+    </div>
+
+    <!-- Support Info -->
+    <div class="text-center mt-12 pt-8 border-t border-gray-200">
+      <p class="text-gray-600 mb-4">Need help choosing the right plan?</p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-6">
+        <div class="flex items-center justify-center">
+          <span class="text-blue-600 mr-2">📞</span>
+          <span>+1 (555) 123-4567</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <span class="text-blue-600 mr-2">📧</span>
+          <span>support@workspacepro.com</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <span class="text-blue-600 mr-2">💬</span>
+          <span>Live Chat Available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
