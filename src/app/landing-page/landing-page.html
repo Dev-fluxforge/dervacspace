@@ -10,21 +10,19 @@
           </div>
           <div>
             <span class="text-2xl font-bold text-gray-900">Dervac WorkSpace </span>
-            <!-- <span class="text-blue-600 text-sm font-medium ml-2">Premium</span> -->
           </div>
         </div>
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
-          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Features</button>
-          <button (click)="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Pricing</button>
-          <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Testimonials</button>
-          <button (click)="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Contact</button>
+          <button onclick="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Features</button>
+          <button onclick="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Pricing</button>
+          <button onclick="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Testimonials</button>
+          <button onclick="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Contact</button>
         </div>
 
         <!-- CTA Button -->
         <button
-          routerLink="/subscriptions"
           class="btn-primary hidden md:inline-block px-6 py-2 font-semibold text-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 cursor-pointer"
         >
           Book Now
@@ -46,31 +44,30 @@
       <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 py-4">
         <div class="flex flex-col space-y-4">
           <button
-            (click)="scrollToSection('features'); closeMobileMenu()"
+            onclick="scrollToSection('features'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Features
           </button>
           <button
-            (click)="scrollToSection('pricing'); closeMobileMenu()"
+            onclick="scrollToSection('pricing'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Pricing
           </button>
           <button
-            (click)="scrollToSection('testimonials'); closeMobileMenu()"
+            onclick="scrollToSection('testimonials'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Testimonials
           </button>
           <button
-            (click)="scrollToSection('contact'); closeMobileMenu()"
+            onclick="scrollToSection('contact'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Contact
           </button>
           <button
-            routerLink="/subscriptions"
             class="bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer text-left mt-4"
           >
             Book Now
@@ -80,7 +77,7 @@
     </div>
   </nav>
 
-  <!-- Rest of your content remains exactly the same -->
+  <!-- Rest of your content -->
   <section class="relative py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -98,13 +95,12 @@
 
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <button
-              routerLink="/subscriptions"
               class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer"
             >
               Get Started Today
             </button>
             <button
-              (click)="scrollToSection('features')"
+              onclick="scrollToSection('features')"
               class="bg-gray-200 text-gray-800 text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
             >
               Learn More
@@ -247,7 +243,6 @@
             </li>
           </ul>
           <button
-            routerLink="/subscriptions"
             class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
           >
             Learn More
@@ -265,7 +260,6 @@
             </li>
           </ul>
           <button
-            routerLink="/subscriptions"
             class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
           >
             Learn More
@@ -289,7 +283,6 @@
             </li>
           </ul>
           <button
-            routerLink="/subscriptions"
             class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"
           >
             Get Started
@@ -313,7 +306,6 @@
             </li>
           </ul>
           <button
-            routerLink="/subscriptions"
             class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
           >
             Learn More
@@ -323,7 +315,6 @@
 
       <div class="text-center">
         <button
-          routerLink="/subscriptions"
           class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer"
         >
           View All Plans & Book Now
@@ -423,13 +414,12 @@
       </p>
       <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
         <button
-          routerLink="/subscriptions"
           class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
         >
           Book Your Space Today
         </button>
         <button
-          (click)="scrollToSection('contact')"
+          onclick="scrollToSection('contact')"
           class="border border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"
         >
           Contact Us
@@ -546,10 +536,10 @@
         <div>
           <h4 class="font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><button (click)="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Features</button></li>
-            <li><button (click)="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Pricing Plans</button></li>
-            <li><button (click)="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Testimonials</button></li>
-            <li><button routerLink="/subscriptions" class="hover:text-white transition duration-300 text-sm cursor-pointer">Book Now</button></li>
+            <li><button onclick="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Features</button></li>
+            <li><button onclick="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Pricing Plans</button></li>
+            <li><button onclick="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Testimonials</button></li>
+            <li><button class="hover:text-white transition duration-300 text-sm cursor-pointer">Book Now</button></li>
           </ul>
         </div>
 
@@ -576,13 +566,13 @@
       </div>
 
       <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-        <p>&copy; {{ getCurrentYear() }} Dervac WorkSpace. All rights reserved. | Premium Coworking Space Solutions</p>
+        <p>&copy; <span id="current-year"></span> Dervac WorkSpace. All rights reserved. | Premium Coworking Space Solutions</p>
       </div>
     </div>
   </footer>
 </div>
 
-<!-- Add this script at the end of your file -->
+<!-- Updated JavaScript -->
 <script>
   // Mobile menu functionality
   document.addEventListener('DOMContentLoaded', function() {
@@ -616,16 +606,28 @@
       hamburgerLines[2].style.transform = 'none';
     }
 
+    // Scroll to section function
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
     // Toggle menu on button click
     mobileMenuButton.addEventListener('click', toggleMobileMenu);
 
-    // Close menu when clicking on a link (you'll need to add this function to your component)
+    // Make functions globally available
     window.closeMobileMenu = closeMobileMenu;
+    window.scrollToSection = scrollToSection;
 
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
       if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-        
+        closeMobileMenu();
       }
     });
 
