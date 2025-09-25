@@ -1,41 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './landing-page.html',
-  styleUrl: './landing-page.css'
+  styleUrls: ['./landing-page.css']
 })
-export class LandingPage {
-   // Method to scroll to sections
+export class LandingPage implements OnInit {
+  isMobileMenuOpen = false;
+  currentYear: number = new Date().getFullYear();
+
+  ngOnInit(): void {
+    // Initialize any required functionality
+  }
+
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }
 
-  // Method to get current year for footer
-  getCurrentYear(): number {
-    return new Date().getFullYear();
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    this.updateHamburgerAnimation();
   }
 
-  // Method to close mobile menu
   closeMobileMenu(): void {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const hamburgerLines = mobileMenuButton?.querySelectorAll('span');
-
-    if (mobileMenu) {
-      mobileMenu.classList.add('hidden');
-    }
-
-    // Reset hamburger animation
-    if (hamburgerLines) {
-      hamburgerLines[0].style.transform = 'none';
-      hamburgerLines[1].style.opacity = '1';
-      hamburgerLines[2].style.transform = 'none';
-    }
+    this.isMobileMenuOpen = false;
+    this.updateHamburgerAnimation();
   }
 
+  private updateHamburgerAnimation(): void {
+    const hamburgerLines = document.querySelectorAll('#mobile-menu-button span');
+
+    if (this.isMobileMenuOpen) {
+      // Animate hamburger to X
+      if (hamburgerLines[0]) {
+        (hamburgerLines[0] as HTMLElement).style.transform = 'rotate(45deg) translate(5px, 5px)';
+      }
+      if (hamburgerLines[1]) {
+        (hamburgerLines[1] as HTMLElement).style.opacity = '0';
+      }
+      if (hamburgerLines[2]) {
+        (hamburgerLines[2] as HTMLElement).style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      }
+    } else {
+      // Reset hamburger animation
+      if (hamburgerLines[0]) {
+        (hamburgerLines[0] as HTMLElement).style.transform = 'none';
+      }
+      if (hamburgerLines[1]) {
+        (hamburgerLines[1] as HTMLElement).style.opacity = '1';
+      }
+      if (hamburgerLines[2]) {
+        (hamburgerLines[2] as HTMLElement).style.transform = 'none';
+      }
+    }
+  }
 }

@@ -15,21 +15,23 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
-          <button onclick="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Features</button>
-          <button onclick="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Pricing</button>
-          <button onclick="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Testimonials</button>
-          <button onclick="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Contact</button>
+          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Features</button>
+          <button (click)="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Pricing</button>
+          <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Testimonials</button>
+          <button (click)="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Contact</button>
         </div>
 
         <!-- CTA Button -->
-        <button
-          class="btn-primary hidden md:inline-block px-6 py-2 font-semibold text-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 cursor-pointer"
+        <a
+          href="subscription-list.html"
+          class="btn-primary hidden md:inline-block px-6 py-2 font-semibold text-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 cursor-pointer no-underline"
         >
           Book Now
-        </button>
+        </a>
 
         <!-- Mobile Menu Button -->
         <button
+          (click)="toggleMobileMenu()"
           id="mobile-menu-button"
           class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 hover:bg-gray-100 rounded-lg transition duration-300 cursor-pointer"
           aria-label="Toggle menu"
@@ -41,43 +43,44 @@
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 py-4">
+      <div *ngIf="isMobileMenuOpen" class="md:hidden bg-white border-t border-gray-200 py-4">
         <div class="flex flex-col space-y-4">
           <button
-            onclick="scrollToSection('features'); closeMobileMenu()"
+            (click)="scrollToSection('features'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Features
           </button>
           <button
-            onclick="scrollToSection('pricing'); closeMobileMenu()"
+            (click)="scrollToSection('pricing'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Pricing
           </button>
           <button
-            onclick="scrollToSection('testimonials'); closeMobileMenu()"
+            (click)="scrollToSection('testimonials'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Testimonials
           </button>
           <button
-            onclick="scrollToSection('contact'); closeMobileMenu()"
+            (click)="scrollToSection('contact'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
           >
             Contact
           </button>
-          <button
-            class="bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer text-left mt-4"
+          <a
+            href="subscription-list.html"
+            class="bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer text-left mt-4 no-underline text-center"
           >
             Book Now
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Rest of your content -->
+  <!-- Hero Section -->
   <section class="relative py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -94,13 +97,14 @@
           </p>
 
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <button
-              class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer"
+            <a
+              href="subscription-list.html"
+              class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer no-underline text-center"
             >
               Get Started Today
-            </button>
+            </a>
             <button
-              onclick="scrollToSection('features')"
+              (click)="scrollToSection('features')"
               class="bg-gray-200 text-gray-800 text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
             >
               Learn More
@@ -242,11 +246,12 @@
               <span class="text-green-500 mr-2">✓</span> All Basic Amenities
             </li>
           </ul>
-          <button
-            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
+          <a
+            href="subscription-list.html"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer no-underline text-center block"
           >
             Learn More
-          </button>
+          </a>
         </div>
 
         <!-- Daily Pass -->
@@ -259,11 +264,12 @@
               <span class="text-green-500 mr-2">✓</span> All Basic Amenities
             </li>
           </ul>
-          <button
-            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
+          <a
+            href="subscription-list.html"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer no-underline text-center block"
           >
             Learn More
-          </button>
+          </a>
         </div>
 
         <!-- Weekly Pass -->
@@ -282,11 +288,12 @@
               <span class="text-green-500 mr-2">✓</span> 10% Refreshment Discount
             </li>
           </ul>
-          <button
-            class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"
+          <a
+            href="subscription-list.html"
+            class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer no-underline text-center block"
           >
             Get Started
-          </button>
+          </a>
         </div>
 
         <!-- Monthly Pass -->
@@ -305,20 +312,22 @@
               <span class="text-green-500 mr-2">✓</span> Locker Access
             </li>
           </ul>
-          <button
-            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
+          <a
+            href="subscription-list.html"
+            class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer no-underline text-center block"
           >
             Learn More
-          </button>
+          </a>
         </div>
       </div>
 
       <div class="text-center">
-        <button
-          class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer"
+        <a
+          href="subscription-list.html"
+          class="bg-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer no-underline inline-block"
         >
           View All Plans & Book Now
-        </button>
+        </a>
       </div>
     </div>
   </section>
@@ -413,13 +422,14 @@
         No long-term contracts, just premium workspace when you need it.
       </p>
       <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <button
-          class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
+        <a
+          href="subscription-list.html"
+          class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer no-underline inline-block"
         >
           Book Your Space Today
-        </button>
+        </a>
         <button
-          onclick="scrollToSection('contact')"
+          (click)="scrollToSection('contact')"
           class="border border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 hover:text-white transition duration-300 cursor-pointer"
         >
           Contact Us
@@ -536,10 +546,10 @@
         <div>
           <h4 class="font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><button onclick="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Features</button></li>
-            <li><button onclick="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Pricing Plans</button></li>
-            <li><button onclick="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Testimonials</button></li>
-            <li><button class="hover:text-white transition duration-300 text-sm cursor-pointer">Book Now</button></li>
+            <li><button (click)="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Features</button></li>
+            <li><button (click)="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Pricing Plans</button></li>
+            <li><button (click)="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Testimonials</button></li>
+            <li><a href="subscription-list.html" class="hover:text-white transition duration-300 text-sm cursor-pointer no-underline">Book Now</a></li>
           </ul>
         </div>
 
@@ -566,76 +576,8 @@
       </div>
 
       <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-        <p>&copy; <span id="current-year"></span> Dervac WorkSpace. All rights reserved. | Premium Coworking Space Solutions</p>
+        <p>&copy; {{ currentYear }} Dervac WorkSpace. All rights reserved. | Premium Coworking Space Solutions</p>
       </div>
     </div>
   </footer>
 </div>
-
-<!-- Updated JavaScript -->
-<script>
-  // Mobile menu functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const hamburgerLines = mobileMenuButton.querySelectorAll('span');
-
-    function toggleMobileMenu() {
-      const isHidden = mobileMenu.classList.contains('hidden');
-
-      if (isHidden) {
-        mobileMenu.classList.remove('hidden');
-        // Animate hamburger to X
-        hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        hamburgerLines[1].style.opacity = '0';
-        hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-      } else {
-        mobileMenu.classList.add('hidden');
-        // Reset hamburger animation
-        hamburgerLines[0].style.transform = 'none';
-        hamburgerLines[1].style.opacity = '1';
-        hamburgerLines[2].style.transform = 'none';
-      }
-    }
-
-    function closeMobileMenu() {
-      mobileMenu.classList.add('hidden');
-      // Reset hamburger animation
-      hamburgerLines[0].style.transform = 'none';
-      hamburgerLines[1].style.opacity = '1';
-      hamburgerLines[2].style.transform = 'none';
-    }
-
-    // Scroll to section function
-    function scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Toggle menu on button click
-    mobileMenuButton.addEventListener('click', toggleMobileMenu);
-
-    // Make functions globally available
-    window.closeMobileMenu = closeMobileMenu;
-    window.scrollToSection = scrollToSection;
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-        closeMobileMenu();
-      }
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeMobileMenu();
-      }
-    });
-  });
-</script>
