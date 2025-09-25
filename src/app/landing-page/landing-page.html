@@ -29,11 +29,58 @@
         >
           Book Now
         </button>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5 hover:bg-gray-100 rounded-lg transition duration-300 cursor-pointer"
+          aria-label="Toggle menu"
+        >
+          <span class="block w-6 h-0.5 bg-gray-700 transition-transform duration-300"></span>
+          <span class="block w-6 h-0.5 bg-gray-700 transition-transform duration-300"></span>
+          <span class="block w-6 h-0.5 bg-gray-700 transition-transform duration-300"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 py-4">
+        <div class="flex flex-col space-y-4">
+          <button
+            (click)="scrollToSection('features'); closeMobileMenu()"
+            class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
+          >
+            Features
+          </button>
+          <button
+            (click)="scrollToSection('pricing'); closeMobileMenu()"
+            class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
+          >
+            Pricing
+          </button>
+          <button
+            (click)="scrollToSection('testimonials'); closeMobileMenu()"
+            class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
+          >
+            Testimonials
+          </button>
+          <button
+            (click)="scrollToSection('contact'); closeMobileMenu()"
+            class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
+          >
+            Contact
+          </button>
+          <button
+            routerLink="/subscriptions"
+            class="bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer text-left mt-4"
+          >
+            Book Now
+          </button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Rest of your content remains exactly the same -->
   <section class="relative py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -534,3 +581,59 @@
     </div>
   </footer>
 </div>
+
+<!-- Add this script at the end of your file -->
+<script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerLines = mobileMenuButton.querySelectorAll('span');
+
+    function toggleMobileMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
+
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        // Animate hamburger to X
+        hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        hamburgerLines[1].style.opacity = '0';
+        hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        mobileMenu.classList.add('hidden');
+        // Reset hamburger animation
+        hamburgerLines[0].style.transform = 'none';
+        hamburgerLines[1].style.opacity = '1';
+        hamburgerLines[2].style.transform = 'none';
+      }
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      // Reset hamburger animation
+      hamburgerLines[0].style.transform = 'none';
+      hamburgerLines[1].style.opacity = '1';
+      hamburgerLines[2].style.transform = 'none';
+    }
+
+    // Toggle menu on button click
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+    // Close menu when clicking on a link (you'll need to add this function to your component)
+    window.closeMobileMenu = closeMobileMenu;
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+  });
+</script>
