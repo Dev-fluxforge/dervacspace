@@ -1,6 +1,25 @@
+/* Remove borders from navigation elements */
+nav button {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Mobile menu styling */
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+  z-index: 40;
+}
+
+/* Hamburger menu transitions */
+#mobile-menu-button span {
+  transition: all 0.3s ease;
+}
+
+/* Card hover effects */
 .card-hover {
   transition: all 0.3s ease;
   transform: translateY(0);
+  border: none !important;
 }
 
 .card-hover:hover {
@@ -13,25 +32,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Mobile menu animation */
-#mobile-menu {
-  transition: all 0.3s ease-in-out;
-}
-
-/* Hamburger menu transitions */
-#mobile-menu-button span {
-  transition: all 0.3s ease;
-}
-
-/* Ensure buttons have proper cursor */
+/* Ensure buttons have proper cursor and no borders */
 button {
   cursor: pointer;
-}
-
-/* Remove default button styles */
-button {
-  background: none;
   border: none;
+  background: none;
   font: inherit;
   color: inherit;
 }
@@ -42,10 +47,55 @@ button:focus {
   outline-offset: 2px;
 }
 
+/* Navigation button styles */
+nav button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background-color: rgb(239, 246, 255);
+}
+
+/* Mobile menu auto-close behavior */
+@media (max-width: 768px) {
+  #mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+  }
+}
+
+/* Remove any remaining borders from pricing cards */
+.bg-white {
+  border: none !important;
+}
+
+/* Footer button styles */
+footer button {
+  text-align: left;
+  width: 100%;
+  padding: 0.25rem 0;
+}
+
+footer button:hover {
+  color: white;
+}
+
 /* Responsive improvements */
 @media (max-width: 768px) {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  /* Ensure mobile menu doesn't have borders */
+  #mobile-menu button {
+    border: none !important;
+    width: 100%;
+    text-align: left;
   }
 }

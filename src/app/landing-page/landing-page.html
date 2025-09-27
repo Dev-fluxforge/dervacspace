@@ -15,15 +15,15 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex space-x-8">
-          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Features</button>
-          <button (click)="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Pricing</button>
-          <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Testimonials</button>
-          <button (click)="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer">Contact</button>
+          <button (click)="scrollToSection('features')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50">Features</button>
+          <button (click)="scrollToSection('pricing')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50">Pricing</button>
+          <button (click)="scrollToSection('testimonials')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50">Testimonials</button>
+          <button (click)="scrollToSection('contact')" class="text-gray-700 hover:text-blue-600 transition duration-300 font-medium cursor-pointer px-3 py-2 rounded-lg hover:bg-blue-50">Contact</button>
         </div>
 
         <!-- CTA Button -->
         <a
-          href="subscription-list.html"
+          href="/subscribe"
           class="btn-primary hidden md:inline-block px-6 py-2 font-semibold text-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 cursor-pointer no-underline"
         >
           Book Now
@@ -43,8 +43,13 @@
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div *ngIf="isMobileMenuOpen" class="md:hidden bg-white border-t border-gray-200 py-4">
-        <div class="flex flex-col space-y-4">
+      <div
+        *ngIf="isMobileMenuOpen"
+        (mouseleave)="closeMobileMenu()"
+        id="mobile-menu"
+        class="md:hidden bg-white border-t border-gray-200 py-4 absolute left-0 right-0 shadow-lg"
+      >
+        <div class="flex flex-col space-y-4 px-4">
           <button
             (click)="scrollToSection('features'); closeMobileMenu()"
             class="text-gray-700 hover:text-blue-600 hover:bg-blue-50 py-3 px-4 rounded-lg transition duration-300 font-medium cursor-pointer text-left"
@@ -70,7 +75,7 @@
             Contact
           </button>
           <a
-            href="subscription-list.html"
+            href="/subscribe"
             class="bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 cursor-pointer text-left mt-4 no-underline text-center"
           >
             Book Now
@@ -265,7 +270,7 @@
             </li>
           </ul>
           <a
-            href="subscription-list.html"
+            href="/subscribe"
             class="w-full bg-gray-100 text-gray-700 py-2 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer no-underline text-center block"
           >
             Learn More
@@ -546,10 +551,10 @@
         <div>
           <h4 class="font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><button (click)="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Features</button></li>
-            <li><button (click)="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Pricing Plans</button></li>
-            <li><button (click)="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm cursor-pointer">Testimonials</button></li>
-            <li><a href="subscription-list.html" class="hover:text-white transition duration-300 text-sm cursor-pointer no-underline">Book Now</a></li>
+            <li><button (click)="scrollToSection('features')" class="hover:text-white transition duration-300 text-sm cursor-pointer text-left w-full py-1">Features</button></li>
+            <li><button (click)="scrollToSection('pricing')" class="hover:text-white transition duration-300 text-sm cursor-pointer text-left w-full py-1">Pricing Plans</button></li>
+            <li><button (click)="scrollToSection('testimonials')" class="hover:text-white transition duration-300 text-sm cursor-pointer text-left w-full py-1">Testimonials</button></li>
+            <li><a href="subscription-list.html" class="hover:text-white transition duration-300 text-sm cursor-pointer no-underline py-1 block">Book Now</a></li>
           </ul>
         </div>
 

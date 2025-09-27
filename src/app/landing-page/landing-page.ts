@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,6 +13,22 @@ export class LandingPage implements OnInit {
 
   ngOnInit(): void {
     // Initialize any required functionality
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    // Close mobile menu when clicking outside
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+    if (this.isMobileMenuOpen && mobileMenu && mobileMenuButton) {
+      const isClickInsideMenu = mobileMenu.contains(event.target as Node);
+      const isClickOnButton = mobileMenuButton.contains(event.target as Node);
+
+      if (!isClickInsideMenu && !isClickOnButton) {
+        this.closeMobileMenu();
+      }
+    }
   }
 
   scrollToSection(sectionId: string): void {
