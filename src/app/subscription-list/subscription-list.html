@@ -11,8 +11,8 @@
           <span>Back to Home</span>
         </button>
         <div class="flex items-center space-x-3">
-          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span class="text-white font-bold text-xl">W</span>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center">
+            <img src="./image/logo.png" alt="">
           </div>
           <div>
             <span class="text-xl font-bold text-gray-900">WorkSpace</span>
@@ -52,7 +52,7 @@
 
           <!-- Price -->
           <div class="mb-4 flex-grow">
-            <div class="text-3xl font-bold text-blue-600">${{ subscription.price }}</div>
+            <div class="text-3xl font-bold text-blue-600">₦{{ subscription.price }}</div>
             <div class="text-gray-600 text-sm">
               <span *ngIf="subscription.duration.includes('Hour')">per hour</span>
               <span *ngIf="subscription.duration.includes('Day') && !subscription.duration.includes('Weekly')">per day</span>
@@ -110,7 +110,7 @@
             </div>
             <div class="flex justify-between">
               <span class="font-semibold">Price:</span>
-              <span class="text-blue-600 font-bold">${{ selectedSubscription.price }}</span>
+              <span class="text-blue-600 font-bold">₦{{ selectedSubscription.price }}</span>
             </div>
             <div class="flex justify-between">
               <span class="font-semibold">Includes:</span>
@@ -161,7 +161,7 @@
                 [(ngModel)]="bookingForm.phone"
                 name="phone"
                 class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="+1 (555) 123-4567"
+                placeholder="+234 (816) 022-5365"
               >
             </div>
 

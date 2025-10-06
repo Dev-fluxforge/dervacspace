@@ -10,7 +10,7 @@ export class SubscriptionService {
       id: 1,
       name: 'Hourly Pass',
       duration: '1 Hour',
-      price: 5,
+      price: 1500,
       description: 'Perfect for quick work sessions or meetings',
       features: [
         '24/7 Power Supply',
@@ -23,7 +23,7 @@ export class SubscriptionService {
       id: 2,
       name: 'Daily Pass',
       duration: '1 Day',
-      price: 25,
+      price: 5000,
       description: 'Great for full-day productivity bursts',
       features: [
         '24/7 Power Supply',
@@ -38,7 +38,7 @@ export class SubscriptionService {
       id: 3,
       name: 'Weekly Pass',
       duration: '7 Days',
-      price: 120,
+      price: 28000,
       description: 'Ideal for project-based work or short-term contracts',
       features: [
         '24/7 Power Supply',
@@ -50,13 +50,13 @@ export class SubscriptionService {
         'Meeting Room Credits (2 hours)'
       ],
       popular: true,
-      savings: 'Save $55 compared to daily'
+      savings: 'Save ₦7,000 compared to daily'
     },
     {
       id: 4,
       name: 'Monthly Pass',
       duration: '30 Days',
-      price: 400,
+      price: 100000,
       description: 'Best value for regular users and dedicated professionals',
       features: [
         '24/7 Power Supply',
@@ -69,7 +69,7 @@ export class SubscriptionService {
         'Dedicated Locker Access',
         'Priority Support'
       ],
-      savings: 'Save $200 compared to weekly'
+      savings: 'Save ₦50,000 compared to weekly'
     }
   ];
 
